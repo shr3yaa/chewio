@@ -1,5 +1,5 @@
 # chewio
-Food delivery mobile app built on Ionic Framework and Google Firestore database. 
+Food delivery mobile app built on Ionic Framework and Google Firestore database. The food items are stored in Firestore.
 
 It was created in my 2nd year of polytechnic in 2020.
 
