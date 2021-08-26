@@ -1,3 +1,26 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" contentId="main" menuId="main">
+    <ion-header>
+      <ion-toolbar class="white">
+        <ion-title>Welcome {{userName}}!</ion-title>
+        <ion-title>
+          <ion-note>{{email}}</ion-note>
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item lines="none" [routerLink]="['home']"(click)="close()"  routerLinkActive="bold">
+          <ion-icon name="search" slot="start"></ion-icon>Home
+        </ion-item>
+        <ion-item lines="none" [routerLink]="['account']" (click)="close()"  routerLinkActive="bold">
+          <ion-icon name="home-outline" slot="start"></ion-icon>Account
+        </ion-item>
+        <ion-item lines="none" [routerLink]="['cart']"(click)="close()"  routerLinkActive="bold">
+          <ion-icon name="cart" slot="start"></ion-icon>Cart
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

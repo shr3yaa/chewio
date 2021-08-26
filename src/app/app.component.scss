@@ -1,0 +1,13 @@
+bold {
+    font-weight: bold
+   }
+
+   :host ::ng-deep ion-toolbar {
+    --background: #FF7D00;
+    --color: white;
+   }
+
+   .white {
+    --background: #F9F5F1;
+    --color: black;
+   }

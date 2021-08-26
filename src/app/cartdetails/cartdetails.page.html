@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cartdetails</ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/cart']">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="myForm">
+    <ion-item>
+      <h2 style=" font-size: 22px;"> {{ cart.name }}</h2>
+    </ion-item>
+    <ion-item>
+    <p style=" font-size: 20px;">S${{ cart.price}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">quantity</ion-label>
+      <ion-input type="number" formControlName="quantity" value="{{cart.quantity}}"></ion-input>
+      </ion-item>
+    <ion-row>
+    <ion-col>
+    <ion-button (click)="update()">Update</ion-button>
+    <ion-button (click)="delete()">Delete</ion-button>
+    </ion-col>
+    </ion-row>
+    </form>
+</ion-content>

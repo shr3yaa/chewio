@@ -1,20 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+  <ion-buttons slot="start">
+  <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title>Home</ion-title>
     </ion-toolbar>
-  </ion-header>
+ </ion-header>
+ 
+ <ion-content [fullscreen]="true">
+   <!--<ion-searchbar showcancelbutton="" animated placeholder="Search..." (ionInput)="filterList($event)"  ></ion-searchbar> -->
+  <ion-list *ngFor="let westerns of Western"  [routerLink]="['/details', westerns.id]">
+  <ion-item >
+  <ion-label >
+  <h1 style="font-weight: bold;" >{{ westerns.name}}</h1>
+  <img width="570" height="250"  size="large" expand="block" src="{{ westerns.img }}"/>
+  <h2 style=" font-size: 22px;">S$ {{ westerns.price }}</h2>
+  </ion-label>
+  <ion-icon slot="end" name="caret-forward-outline"></ion-icon>
+  </ion-item>
+  </ion-list>
+ </ion-content>
+  
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>

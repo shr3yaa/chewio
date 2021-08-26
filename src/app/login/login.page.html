@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="white">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form #form="ngForm"(ngSubmit)="login(form)">
+  <div class="logo">
+    <ion-item>
+      <img src="./assets/chewio.png"  alt="logo"/>
+  </ion-item>
+  </div>
+  <div>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+    <ion-input name="email" type="email" placeholder ="Please enter your email" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input name="password" type="password" placeholder ="Please enter your password" ngModel required></ion-input>
+      </ion-item>
+  </div>
+  <div style="text-align: center;margin: auto;" padding>
+    <ion-button type="submit" size="large" expand="block" [disabled]="form.invalid">Sign In</ion-button>
+  </div>
+</form>
+<div style="text-align: center;margin: auto;">
+  <h6 (click)="goToReset()">Forget Password</h6>
+  <h6 class="underline-on-hover" (click)="goTosignUp()">Don't have an account? Sign Up now!</h6>
+    </div>
+</ion-content>

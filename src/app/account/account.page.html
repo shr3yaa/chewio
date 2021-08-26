@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <ion-item>Toggle Dark Mode
+    <ion-toggle color="secondary" slot="end" (click)="toggleDarkMode()"></ion-toggle>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+    <ion-button  (click)="logOut()" type="submit" size="large" expand="block" >Log out</ion-button>
+    </ion-col>
+    </ion-row>
+
+</ion-content>

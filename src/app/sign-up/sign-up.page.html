@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="white">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/login']">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>signUp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="signup(form)">
+    <div class="logo">
+      <ion-item>
+        <img src="./assets/chewio.png" alt="logo" />
+      </ion-item>
+    </div>
+    <div>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input name="username" type="text" placeholder="Please enter your username" ngModel required>
+        </ion-input>
+      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input name="email" type="email" placeholder="Please enter your email" ngModel required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input name="password" type="password" placeholder="Please enter your password" ngModel required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>I agree to the terms and condition.</ion-label>
+          <ion-checkbox [(ngModel)]="checkedbtn" name="checkedbtn" slot="start" color="dark"></ion-checkbox>
+        </ion-item>
+    </div>
+    <div style="text-align: center;margin: auto;" padding>
+      <ion-button type="submit" size="large" expand="block" [disabled]="form.invalid">Sign Up</ion-button>
+    </div>
+  </form>
+</ion-content>

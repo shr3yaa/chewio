@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <ion-buttons slot="start">
+  <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title>Cart</ion-title>
+  </ion-toolbar>
+ </ion-header>
+
+ <ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button *ngFor="let cart1 of cart" [routerLink]="['/cartdetails', cart1.id]">
+    <ion-label>
+    <h3>{{ cart1.name }}</h3>
+    - ${{ cart1.price }}
+    </ion-label>
+    <ion-icon slot="end" name="caret-forward-outline"></ion-icon>
+    </ion-item>
+    </ion-list>
+
+    <form [formGroup]="myForm">
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-input formControlName="address" value="{{address}}" text-center></ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-label>Delivery Time</ion-label>
+        <ion-datetime formControlName="time" value="{{time}}" displayFormat="h:mm A"></ion-datetime>
+      </ion-item>
+      
+      <ion-row>
+      <ion-col>
+      <ion-button  type="submit" size="large" expand="block" (click)="placeOrder()">Place Order</ion-button>
+      </ion-col>
+      </ion-row>
+      </form>
+ </ion-content>
